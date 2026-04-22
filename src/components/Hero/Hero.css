@@ -3,6 +3,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .hero__video-wrapper {
@@ -19,6 +20,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .hero__content {
