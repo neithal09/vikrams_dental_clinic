@@ -40,7 +40,7 @@ const Hero = () => {
           playsInline
           preload="auto"
         >
-          <source src="/public/video.webm" type="video/webm" />
+          <source src="/video.webm" type="video/webm" />
         </video>
       </div>
 
