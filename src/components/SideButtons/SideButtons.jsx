@@ -1,15 +1,19 @@
-import React from 'react';
-import { FaWhatsapp, FaPhone, FaArrowRight } from 'react-icons/fa';
-import './SideButtons.css';
+import React from "react";
+import { FaWhatsapp, FaPhone, FaArrowRight } from "react-icons/fa";
+import "./SideButtons.css";
 
 const SideButtons = () => {
   return (
     <div className="side-buttons">
-      <a href="#" className="side-buttons__btn side-buttons__btn--arrow" aria-label="Navigate">
+      <a
+        href="#"
+        className="side-buttons__btn side-buttons__btn--arrow"
+        aria-label="Navigate"
+      >
         <FaArrowRight />
       </a>
       <a
-        href="https://wa.me/919820020221"
+        href="https://wa.me/+91 8800971008"
         target="_blank"
         rel="noopener noreferrer"
         className="side-buttons__btn side-buttons__btn--whatsapp"
@@ -18,7 +22,7 @@ const SideButtons = () => {
         <FaWhatsapp />
       </a>
       <a
-        href="tel:+919820020221"
+        href="tel:++91 8800971008"
         className="side-buttons__btn side-buttons__btn--phone"
         aria-label="Call us"
       >
