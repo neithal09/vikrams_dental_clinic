@@ -1,0 +1,192 @@
+/* ========================================
+   Contact / Consultation Form Section
+   ======================================== */
+
+.contact-section {
+  background: var(--logo-white);
+  padding: 100px 5%;
+  min-height: auto;
+}
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* ---------- Left Column ---------- */
+
+.contact-left {
+  flex: 0 0 35%;
+}
+
+.contact-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(36px, 4.5vw, 56px);
+  color: var(--logo-blue-deep);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* ---------- Right Column ---------- */
+
+.contact-right {
+  flex: 1;
+}
+
+.contact-card {
+  background: var(--logo-surface-alt);
+  border-radius: 16px;
+  padding: 50px 45px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-card__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  color: var(--logo-blue-deep);
+  margin: 0 0 30px;
+}
+
+/* ---------- Form Grid ---------- */
+
+.contact-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form__field--full {
+  grid-column: span 2;
+}
+
+.contact-form__input {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-bottom: 1.5px solid rgba(88, 173, 213, 0.24);
+  background: var(--logo-white);
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--logo-ink);
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.contact-form__input:focus {
+  border-bottom-color: var(--logo-blue-deep);
+}
+
+.contact-form__input::placeholder {
+  color: var(--logo-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ---------- Textarea ---------- */
+
+.contact-form__textarea {
+  grid-column: span 2;
+  min-height: 120px;
+  resize: vertical;
+  border: none;
+  border-bottom: 1.5px solid rgba(88, 173, 213, 0.24);
+  background: var(--logo-white);
+}
+
+/* ---------- Validation ---------- */
+
+.contact-form__error {
+  color: #d32f2f;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  margin-top: 4px;
+}
+
+/* ---------- Submit Button ---------- */
+
+.contact-form__submit {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  border: 1.5px solid var(--logo-blue-deep);
+  background: transparent;
+  color: var(--logo-blue-deep);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-form__submit:hover {
+  background: var(--logo-blue-deep);
+  color: var(--logo-white);
+}
+
+/* ---------- Error Banner ---------- */
+
+.contact-form__banner {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border: 1.5px solid #d32f2f;
+  background: transparent;
+  color: #d32f2f;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-left {
+    flex: 0 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 60px 5%;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+  }
+
+  .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__field--full {
+    grid-column: span 1;
+  }
+
+  .contact-form__textarea {
+    grid-column: span 1;
+  }
+}

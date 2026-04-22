@@ -1,0 +1,197 @@
+/* .location {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+} */
+
+.location {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  background: transparent;
+}
+
+/* ── LEFT SIDE: Content ── */
+.location__left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, rgba(31, 95, 126, 0.85) 0%, rgba(63, 149, 190, 0.75) 100%);
+  padding: 80px 60px;
+}
+
+.location__content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ── RIGHT SIDE: Image ── */
+.location__right {
+  flex: 1;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Background (removed, no longer used) ── */
+.location__bg {
+  display: none;
+}
+
+.location__bg-img {
+  display: none;
+}
+
+.location__bg-overlay {
+  display: none;
+}
+
+/* ── Decorative Arcs ── */
+.location__arcs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.location__arcs-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Content ── */
+.location__text {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+/* ── Heading ── */
+.location__heading {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.location__heading-line1 {
+  display: block;
+  font-size: clamp(42px, 5vw, 68px);
+  color: var(--logo-mint-soft);
+}
+
+.location__heading-line2 {
+  display: block;
+  font-size: clamp(42px, 5vw, 68px);
+  color: var(--logo-mint);
+}
+
+.location__heading-line2 em {
+  font-style: italic;
+}
+
+/* ── Scribble Arrow ── */
+.location__arrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-20%);
+}
+
+/* ── Description ── */
+.location__description {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+/* ── CTA ── */
+.location__cta {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--logo-blue-deep);
+  background-color: var(--logo-white);
+  padding: 18px 44px;
+  border: 1px solid var(--logo-white);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.location__cta:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--logo-white);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .location__left {
+    padding: 60px 40px;
+  }
+
+  .location__arrow {
+    left: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .location {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .location__left {
+    min-height: 60vh;
+    padding: 60px 30px;
+  }
+
+  .location__right {
+    min-height: 60vh;
+  }
+
+  .location__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .location__left {
+    padding: 48px 24px;
+  }
+
+  .location__description {
+    font-size: 15px;
+  }
+
+  .location__cta {
+    padding: 16px 36px;
+    font-size: 14px;
+  }
+}

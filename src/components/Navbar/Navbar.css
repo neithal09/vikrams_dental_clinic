@@ -1,0 +1,254 @@
+/* ===========================
+   Navbar Top Bar Styles
+   =========================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition:
+        background-color 0.3s ease,
+        backdrop-filter 0.3s ease,
+        padding 0.3s ease;
+    padding: 24px 0;
+}
+
+.navbar--scrolled {
+    background-color: rgba(31, 95, 126, 0.78);
+    backdrop-filter: blur(12px);
+    padding: 14px 0;
+}
+
+.navbar__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.navbar__logo-text {
+    font-family: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--logo-white);
+    letter-spacing: 3px;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    padding: 8px 18px;
+    display: inline-block;
+    line-height: 1;
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar__book-btn {
+    color: var(--logo-white);
+    text-decoration: none;
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 10px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    transition: all 0.3s ease;
+    display: none;
+    white-space: nowrap;
+}
+
+.navbar__book-btn:hover {
+    background-color: rgba(93, 216, 196, 0.18);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar__hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background-color: var(--logo-white);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.navbar__hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===========================
+   Full-Screen Menu Overlay
+   =========================== */
+
+.navbar__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, #1f5f7e 0%, #246f93 48%, #3dbda9 100%);
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+    overflow: hidden;
+}
+
+.navbar__overlay--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Decorative beige arc */
+.navbar__overlay-arc {
+    position: absolute;
+    width: 55vw;
+    height: 110vh;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    transform: translate(-55%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Close button */
+.navbar__overlay-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--logo-white);
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.navbar__overlay-close:hover {
+    opacity: 0.7;
+}
+
+/* Navigation links container */
+.navbar__overlay-nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 28%;
+    padding-top: 15vh;
+}
+
+/* Navigation links */
+.navbar__overlay-nav a {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 8px 0;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    display: inline-block;
+}
+
+.navbar__overlay-nav a:hover {
+    color: var(--logo-mint-soft);
+    transform: translateX(6px);
+}
+
+.navbar__overlay-nav a.active {
+    color: var(--logo-mint-soft);
+}
+
+/* ===========================
+   Responsive Styles
+   =========================== */
+
+@media (min-width: 768px) {
+    .navbar__book-btn {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__overlay-nav {
+        margin-left: 10%;
+    }
+
+    .navbar__overlay-nav a {
+        font-size: 28px;
+    }
+
+    .navbar__overlay-arc {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar__logo-text {
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding: 6px 14px;
+    }
+
+    .navbar__container {
+        padding: 0 20px;
+    }
+
+    .navbar__overlay-nav {
+        margin-left: 8%;
+        gap: 6px;
+    }
+
+    .navbar__overlay-nav a {
+        font-size: 24px;
+    }
+
+    .navbar__overlay-close {
+        top: 20px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,893 @@
+/* ============================================================
+   BookAppointmentPage.css
+   Prefix: ba-
+   Design: Light elegant premium dental clinic booking page
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400;700&display=swap");
+
+/* ── CSS Variables ── */
+:root {
+    --primary-blue: #5FA7C3;
+    --teal-green: #4FBF9F;
+    --deep-teal: #3AA087;
+    --light-aqua: #7FD6C2;
+    --white: #FFFFFF;
+    --bg-light: #F2F4F5;
+    --text-soft: #6B7280;
+    --text-dark: #1a3a38;
+    --border-light: rgba(95, 167, 195, 0.18);
+    --border-medium: rgba(95, 167, 195, 0.32);
+    --teal-bg-subtle: rgba(127, 214, 194, 0.12);
+    --shadow-soft: 0 4px 24px rgba(58, 160, 135, 0.1);
+    --shadow-medium: 0 8px 40px rgba(58, 160, 135, 0.15);
+}
+
+/* ── Navbar visibility on this page ── */
+.navbar--book-appointment {
+    background-color: rgba(31, 95, 126, 0.75) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ── Page wrapper ── */
+/* .ba {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+} */
+.ba {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+    padding-top: 80px;
+    /* 👈 move it here */
+}
+
+/* ============================================================
+   SECTION 1 — Cinematic Hero Split
+   ============================================================ */
+
+/* .ba-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: 80px;
+} */
+.ba-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    /* ❌ remove this */
+    /* padding-top: 80px; */
+}
+
+/* ── Photo side ── */
+.ba-intro__photo-side {
+    position: relative;
+    overflow: hidden;
+    background: #d4eeea;
+}
+
+.ba-intro__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.ba-intro__photo-side:hover .ba-intro__photo {
+    transform: scale(1.03);
+}
+
+.ba-intro__photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(212, 238, 234, 0.6) 0%,
+            transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Floating credential badge — bottom-left of photo */
+.ba-intro__badge {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-medium);
+    border-radius: 8px;
+    padding: 20px 28px;
+    z-index: 2;
+    box-shadow: var(--shadow-soft);
+}
+
+.ba-intro__badge-num {
+    display: block;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--primary-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.ba-intro__badge-text {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    font-family: "Lato", sans-serif;
+}
+
+/* ── Text side ── */
+.ba-intro__text-side {
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 72px;
+    border-left: 1px solid var(--border-light);
+}
+
+.ba-intro__eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: block;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-intro__h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(52px, 6vw, 82px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--text-dark);
+    margin: 0 0 32px 0;
+}
+
+.ba-intro__h1 em {
+    font-style: italic;
+    color: var(--primary-blue);
+}
+
+.ba-intro__sub {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text-soft);
+    margin-bottom: 48px;
+    max-width: 480px;
+    font-family: "Lato", sans-serif;
+}
+
+/* Micro stats row */
+.ba-intro__micro-stats {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.ba-intro__micro-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px 0 0;
+}
+
+.ba-micro-num {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--primary-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.ba-micro-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    font-family: "Lato", sans-serif;
+}
+
+.ba-intro__micro-sep {
+    width: 1px;
+    height: 36px;
+    background: var(--border-light);
+    margin-right: 32px;
+    flex-shrink: 0;
+}
+
+/* CTA scroll link */
+.ba-intro__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26, 58, 56, 0.25);
+    padding-bottom: 8px;
+    width: fit-content;
+    transition: all 0.3s ease;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-intro__cta:hover {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.ba-intro__cta span {
+    transition: transform 0.3s ease;
+}
+
+.ba-intro__cta:hover span {
+    transform: translateY(3px);
+}
+
+/* ============================================================
+   SHARED LAYOUT HELPERS
+   ============================================================ */
+
+.ba-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 56px;
+}
+
+.ba-eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+}
+
+.ba-h2 em {
+    font-style: italic;
+    color: var(--primary-blue);
+}
+
+/* ============================================================
+   SECTION 2 — Journey / Consultation Steps
+   ============================================================ */
+
+.ba-journey {
+    background: var(--bg-light);
+    padding: 112px 0;
+}
+
+.ba-journey__head {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.ba-journey__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Individual step card */
+.ba-step {
+    background: var(--white);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ba-step:hover {
+    background: #eef8f6;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Ghost number behind content */
+.ba-step__ghost {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: rgba(95, 167, 195, 0.1);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+/* Teal circle badge */
+.ba-step__badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--teal-bg-subtle);
+    border: 1px solid var(--border-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--primary-blue);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.ba-step__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin: 0 0 16px 0;
+    line-height: 1.25;
+    position: relative;
+    z-index: 1;
+}
+
+.ba-step__desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-soft);
+    font-family: "Lato", sans-serif;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+/* Teal bottom accent line on hover */
+.ba-step::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-aqua));
+    transition: width 0.4s ease;
+}
+
+.ba-step:hover::after {
+    width: 100%;
+}
+
+/* Left teal border accent */
+.ba-step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--border-light);
+    transition: background 0.3s ease;
+}
+
+.ba-step:hover::before {
+    background: var(--border-medium);
+}
+
+/* ============================================================
+   SECTION 3 — Booking Form
+   ============================================================ */
+
+.ba-form-section {
+    background: var(--white);
+    padding: 0;
+}
+
+.ba-form-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    min-height: 700px;
+}
+
+/* ── Left info panel ── */
+.ba-form-info {
+    background: linear-gradient(160deg, #e8f4f8 0%, #d4eeea 100%);
+    padding: 72px 56px;
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.ba-form-info__h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+}
+
+.ba-form-info__h3 em {
+    font-style: italic;
+    color: var(--primary-blue);
+}
+
+.ba-form-info__rule {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-aqua));
+    margin: 28px 0 40px;
+    flex-shrink: 0;
+    border-radius: 2px;
+}
+
+/* Info rows */
+.ba-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.ba-info-icon {
+    font-size: 18px;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 24px;
+    text-align: center;
+}
+
+.ba-info-row strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-info-row p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-info-row a {
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ba-info-row a:hover {
+    color: var(--primary-blue);
+}
+
+/* Trust strip at bottom of info panel */
+.ba-form-trust {
+    margin-top: auto;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ba-trust-item {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-trust-item span {
+    color: var(--teal-green);
+    font-size: 14px;
+}
+
+/* ── Right form panel ── */
+.ba-form-card {
+    padding: 72px 64px;
+    background: var(--white);
+}
+
+.ba-form-card__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin: 0 0 12px 0;
+    line-height: 1.1;
+}
+
+.ba-form-card__sub {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    max-width: 520px;
+    font-family: "Lato", sans-serif;
+}
+
+/* Form layout */
+.ba-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ba-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ba-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ba-field--full {
+    grid-column: 1 / -1;
+}
+
+.ba-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-input {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ba-input::placeholder {
+    color: #aab4bc;
+}
+
+.ba-input:focus {
+    border-color: var(--primary-blue);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(95, 167, 195, 0.12);
+}
+
+/* Date input color fix */
+.ba-input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.4) sepia(1) hue-rotate(160deg) saturate(1.5);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.ba-select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235FA7C3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-color: var(--bg-light);
+    padding-right: 44px;
+}
+
+.ba-select option {
+    background: var(--white);
+    color: var(--text-dark);
+}
+
+.ba-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: "Lato", sans-serif;
+    line-height: 1.7;
+}
+
+/* Submit button */
+.ba-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal-green) 100%);
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 20px 48px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    align-self: flex-start;
+}
+
+.ba-submit:hover {
+    background: linear-gradient(135deg, var(--deep-teal) 0%, var(--primary-blue) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(95, 167, 195, 0.35);
+}
+
+.ba-submit-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.ba-submit:hover .ba-submit-arrow {
+    transform: translateX(4px);
+}
+
+/* ============================================================
+   SECTION 4 — Assurance Banner
+   ============================================================ */
+
+.ba-assurance {
+    background: var(--white);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 40px 0;
+}
+
+.ba-assurance__grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ba-assurance__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 56px;
+}
+
+.ba-assurance__num {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--primary-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.ba-assurance__label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: "Lato", sans-serif;
+}
+
+.ba-assurance__sep {
+    width: 1px;
+    height: 40px;
+    background: var(--border-light);
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   GSAP ANIMATION INITIAL STATES
+   ============================================================ */
+
+.ba-intro__eyebrow,
+.ba-intro__h1,
+.ba-intro__sub,
+.ba-intro__micro-stats,
+.ba-intro__cta {
+    will-change: transform, opacity;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1200px) {
+    .ba-form-grid {
+        grid-template-columns: 360px 1fr;
+    }
+
+    .ba-intro__text-side {
+        padding: 80px 48px;
+    }
+
+    .ba-assurance__item {
+        padding: 8px 36px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ba-intro {
+        grid-template-columns: 1fr;
+        padding-top: 80px;
+    }
+
+    .ba-intro__photo-side {
+        min-height: 60vh;
+    }
+
+    .ba-intro__text-side {
+        padding: 72px 48px;
+        min-height: auto;
+    }
+
+    .ba-journey__steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ba-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ba-form-info {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 56px 48px;
+    }
+
+    .ba-form-trust {
+        flex-direction: row;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .ba-container {
+        padding: 0 24px;
+    }
+
+    .ba-intro__text-side {
+        padding: 56px 28px;
+    }
+
+    .ba-intro__micro-stat {
+        padding: 0 16px 0 0;
+    }
+
+    .ba-intro__micro-sep {
+        margin-right: 16px;
+    }
+
+    .ba-journey {
+        padding: 72px 0;
+    }
+
+    .ba-journey__head {
+        margin-bottom: 48px;
+    }
+
+    .ba-journey__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .ba-form-card {
+        padding: 48px 28px;
+    }
+
+    .ba-form-info {
+        padding: 48px 28px;
+    }
+
+    .ba-form__row {
+        grid-template-columns: 1fr;
+    }
+
+    .ba-assurance__sep {
+        display: none;
+    }
+
+    .ba-assurance__item {
+        flex: 1 1 45%;
+        padding: 16px 20px;
+    }
+
+    .ba-submit {
+        width: 100%;
+    }
+
+    .ba-form-card__title {
+        font-size: 32px;
+    }
+
+    .ba-form-info__h3 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ba-intro__badge {
+        bottom: 20px;
+        left: 20px;
+        padding: 16px 20px;
+    }
+
+    .ba-intro__badge-num {
+        font-size: 30px;
+    }
+
+    .ba-intro__micro-stats {
+        gap: 8px;
+    }
+
+    .ba-intro__micro-stat {
+        padding: 0 12px 0 0;
+    }
+
+    .ba-intro__micro-sep {
+        margin-right: 12px;
+    }
+
+    .ba-form-info {
+        padding: 40px 24px;
+    }
+
+    .ba-form-card {
+        padding: 40px 20px;
+    }
+
+    .ba-step {
+        padding: 36px 24px;
+    }
+
+    .ba-assurance__item {
+        flex: 1 1 100%;
+    }
+}

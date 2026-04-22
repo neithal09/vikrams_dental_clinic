@@ -1,0 +1,114 @@
+.stats-bar {
+  background-color: var(--logo-surface-alt);
+  padding: 80px 0;
+}
+
+.stats-bar__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stats-bar__item {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-right: 1px solid rgba(88, 173, 213, 0.18);
+}
+
+.stats-bar__item:last-child {
+  border-right: none;
+}
+
+.stats-bar__number {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(52px, 6vw, 80px);
+  font-weight: 300;
+  color: var(--logo-blue-deep);
+  line-height: 1;
+}
+
+.stats-bar__rating-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stats-bar__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stats-bar__star {
+  width: 28px;
+  height: 28px;
+}
+
+.stats-bar__star--filled {
+  color: var(--logo-mint);
+}
+
+.stats-bar__label {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--logo-blue-deep);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.6;
+}
+
+.stats-bar__item--text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.stats-bar__tagline {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--logo-blue-deep);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .stats-bar__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-bar__item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stats-bar__item:nth-child(3),
+  .stats-bar__item:nth-child(4) {
+    border-top: 1px solid rgba(88, 173, 213, 0.18);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    padding: 60px 0;
+  }
+
+  .stats-bar__container {
+    grid-template-columns: 1fr;
+    padding: 0 30px;
+  }
+
+  .stats-bar__item {
+    border-right: none;
+    border-bottom: 1px solid rgba(88, 173, 213, 0.18);
+    padding: 30px 20px;
+  }
+
+  .stats-bar__item:last-child {
+    border-bottom: none;
+  }
+}

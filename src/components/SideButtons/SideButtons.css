@@ -1,0 +1,56 @@
+.side-buttons {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.side-buttons__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--logo-white);
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.side-buttons__btn--arrow {
+  background-color: var(--logo-blue-deep);
+}
+
+.side-buttons__btn--arrow:hover {
+  background-color: var(--logo-blue-strong);
+}
+
+.side-buttons__btn--whatsapp {
+  background-color: var(--logo-mint-strong);
+}
+
+.side-buttons__btn--whatsapp:hover {
+  background-color: var(--logo-mint);
+}
+
+.side-buttons__btn--phone {
+  background-color: var(--logo-blue);
+}
+
+.side-buttons__btn--phone:hover {
+  background-color: var(--logo-blue-strong);
+}
+
+@media (max-width: 768px) {
+  .side-buttons__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

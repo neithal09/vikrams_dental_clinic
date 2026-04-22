@@ -1,0 +1,233 @@
+.smile-gallery {
+  background-color: var(--logo-white);
+  padding: 100px 0 80px;
+  overflow: hidden;
+}
+
+/* ── Heading ── */
+.smile-gallery__heading {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 400;
+  color: var(--logo-blue-deep);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.smile-gallery__heading em {
+  font-style: italic;
+}
+
+/* ── Filter Tabs ── */
+.smile-gallery__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.smile-gallery__tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.smile-gallery__tab:hover {
+  color: var(--logo-blue-deep);
+}
+
+.smile-gallery__tab.active {
+  color: var(--logo-blue-deep);
+  border-bottom-color: var(--logo-mint);
+}
+
+.smile-gallery__tab-icon {
+  font-size: 16px;
+}
+
+/* ── 3-Card Grid ── */
+.smile-gallery__grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ── Card ── */
+.smile-gallery__card {
+  text-align: center;
+}
+
+.smile-gallery__card-info {
+  padding: 20px 10px 10px;
+}
+
+.smile-gallery__card-name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--logo-blue-deep);
+  margin-bottom: 10px;
+}
+
+.smile-gallery__card-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── Before/After Slider ── */
+.ba-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.ba-slider__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-slider__before-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.ba-slider__img--before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ba-slider__img--after {
+  z-index: 1;
+}
+
+/* Slider line */
+.ba-slider__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #fff;
+  z-index: 5;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Drag handle - must be interactive */
+.ba-slider__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  pointer-events: auto;
+  z-index: 10;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ba-slider__handle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.ba-slider__handle:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* ── Static Pagination Dots ── */
+.smile-gallery__dots-static {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 50px;
+}
+
+.smile-gallery__dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.smile-gallery__dot.active {
+  background: var(--logo-blue-deep);
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .smile-gallery {
+    padding: 80px 0 60px;
+  }
+
+  .smile-gallery__grid {
+    padding: 0 40px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .smile-gallery__grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .smile-gallery__tabs {
+    gap: 4px;
+  }
+
+  .smile-gallery__tab {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}

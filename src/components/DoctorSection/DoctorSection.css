@@ -1,0 +1,263 @@
+.doctor-section {
+  position: relative;
+  background-color: var(--logo-white);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────
+   TEXT CONTENT (behind the image initially)
+   ───────────────────────────────────── */
+.doctor-section__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 80px 80px 100px;
+  z-index: 1;
+}
+
+/* Pink arc decoration */
+.doctor-section__arc {
+  position: absolute;
+  top: 10%;
+  left: 55%;
+  width: 180px;
+  height: 180px;
+  opacity: 0;
+  transition: opacity 1.2s ease 1.8s;
+}
+
+.doctor-section.is-active .doctor-section__arc {
+  opacity: 1;
+}
+
+.doctor-section__arc svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Doctor name */
+.doctor-section__name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--logo-blue-deep);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 1.6s, transform 0.8s ease 1.6s;
+}
+
+.doctor-section.is-active .doctor-section__name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title */
+.doctor-section__title {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: clamp(48px, 5.5vw, 80px);
+  font-weight: 300;
+  color: var(--logo-blue-deep);
+  line-height: 1.1;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 1.8s, transform 0.8s ease 1.8s;
+}
+
+.doctor-section.is-active .doctor-section__title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.doctor-section__title em {
+  font-style: italic;
+}
+
+/* Description */
+.doctor-section__description {
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--logo-ink);
+  line-height: 1.8;
+  max-width: 550px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 2s, transform 0.8s ease 2s;
+}
+
+.doctor-section.is-active .doctor-section__description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CTA Button */
+.doctor-section__cta {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--logo-blue-deep);
+  padding: 18px 40px;
+  border: 1.5px solid rgba(88, 173, 213, 0.34);
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease 2.2s, transform 0.8s ease 2.2s;
+}
+
+.doctor-section.is-active .doctor-section__cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.doctor-section__cta:hover {
+  background-color: var(--logo-blue-deep);
+  color: var(--logo-white);
+  border-color: var(--logo-blue-deep);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─────────────────────────────────────
+   IMAGE PANEL — the sliding, zooming layer
+   Starts at full width (left:0, width:100%)
+   Glides to right (left:65%, width:35%)
+   ───────────────────────────────────── */
+.doctor-section__image-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+  /* Phase timing: 
+     0–0.8s  : sits full-width (image visible)
+     0.8–2.2s: glides to the right 
+  */
+  transition: left 1.8s cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+              width 1.8s cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+}
+
+.doctor-section.is-active .doctor-section__image-panel {
+  left: 65%;
+  width: 35%;
+}
+
+/* Inner wrapper for zoom animation */
+.doctor-section__image-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* The actual image */
+.doctor-section__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: scale(1);
+  /* Zoom in during slide, then settle */
+  transition: transform 2.4s cubic-bezier(0.45, 0, 0.55, 1) 0.4s;
+  will-change: transform;
+}
+
+.doctor-section.is-active .doctor-section__image {
+  animation: imageZoomSequence 2.8s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+@keyframes imageZoomSequence {
+  /* Start: normal */
+  0% {
+    transform: scale(1);
+  }
+  /* Zoom IN as it starts sliding */
+  35% {
+    transform: scale(1.2);
+  }
+  /* Stay zoomed during mid-slide */
+  60% {
+    transform: scale(1.15);
+  }
+  /* Zoom OUT as it settles into position */
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .doctor-section {
+    min-height: auto;
+  }
+
+  .doctor-section__content {
+    position: relative;
+    width: 100%;
+    padding: 60px 40px;
+    align-items: center;
+    text-align: center;
+    order: 2;
+  }
+
+  .doctor-section__cta {
+    align-self: center;
+  }
+
+  .doctor-section__image-panel {
+    position: relative;
+    width: 100% !important;
+    left: 0 !important;
+    height: 60vh;
+    order: 1;
+  }
+
+  .doctor-section.is-active .doctor-section__image-panel {
+    left: 0;
+    width: 100%;
+  }
+
+  .doctor-section__arc {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .doctor-section__name,
+  .doctor-section__title,
+  .doctor-section__description,
+  .doctor-section__cta {
+    transition-delay: 0.3s !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-section__content {
+    padding: 48px 24px;
+  }
+
+  .doctor-section__name {
+    font-size: 13px;
+    letter-spacing: 4px;
+  }
+
+  .doctor-section__image-panel {
+    height: 50vh;
+  }
+}

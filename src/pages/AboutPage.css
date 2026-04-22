@@ -1,0 +1,1296 @@
+/* ============================================================
+   ABOUT PAGE — AP PREFIX
+   Design System: Light Elegant Theme
+   Vikram's Dental Clinic
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400;600;700&display=swap");
+
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+    --primary-blue: #5FA7C3;
+    --teal-green: #4FBF9F;
+    --deep-teal: #3AA087;
+    --light-aqua: #7FD6C2;
+    --white: #FFFFFF;
+    --bg-light: #F2F4F5;
+    --text-gray: #6B7280;
+
+    /* Derived / semantic */
+    --accent: var(--teal-green);
+    --accent-light: var(--light-aqua);
+    --accent-dark: var(--deep-teal);
+    --border-subtle: rgba(95, 167, 195, 0.18);
+    --border-medium: rgba(79, 191, 159, 0.28);
+}
+
+/* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+.ap {
+    background: var(--bg-light);
+    color: #1a2e2d;
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   SHARED LAYOUT UTILITIES
+   ============================================================ */
+.ap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.ap-section {
+    padding: 100px 0;
+}
+
+.ap-section__header {
+    margin-bottom: 56px;
+}
+
+.ap-eyebrow {
+    font-family: "Lato", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.ap-h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #1a2e2d;
+    margin: 0;
+}
+
+.ap-h2 em {
+    font-style: italic;
+    color: var(--primary-blue);
+}
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.ap-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.ap-hero__bg {
+    position: absolute;
+    inset: 0;
+    background: url("/kidsmile.jpg") center / cover no-repeat;
+    opacity: 0.62;
+    z-index: 0;
+}
+
+.ap-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(150deg,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.ap-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ap-hero__eyebrow {
+    display: block;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.ap-hero__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(60px, 8vw, 100px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: #fff;
+    letter-spacing: -0.01em;
+    margin: 0 0 28px;
+    text-align: center;
+    text-shadow: 0 2px 24px rgba(58, 160, 135, 0.3);
+}
+
+.ap-hero__title em {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+    display: block;
+}
+
+.ap-hero__subtitle {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 400;
+    margin: 0;
+}
+
+.ap-hero__scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 18px;
+    animation: ap-bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes ap-bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(9px);
+        opacity: 1;
+    }
+}
+
+/* ============================================================
+   2. STATS BAR
+   ============================================================ */
+.ap-stats {
+    background: var(--white);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 28px 40px;
+    gap: 0;
+    box-shadow: 0 2px 16px rgba(95, 167, 195, 0.08);
+}
+
+.ap-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 52px;
+    gap: 6px;
+}
+
+.ap-stat__num {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--primary-blue);
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+
+.ap-stat__label {
+    font-family: "Lato", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-gray);
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ap-stats__sep {
+    width: 1px;
+    height: 52px;
+    background: var(--border-subtle);
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   3. WELCOME
+   ============================================================ */
+.ap-welcome {
+    background: var(--white);
+}
+
+.ap-welcome__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.ap-welcome__lead {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.75;
+    color: #2a4a48;
+    margin: 0 0 24px;
+}
+
+.ap-welcome__text {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+.ap-welcome__right {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding-top: 84px;
+}
+
+.ap-welcome__divider {
+    width: 1px;
+    min-height: 260px;
+    background: linear-gradient(to bottom,
+            var(--teal-green) 0%,
+            rgba(79, 191, 159, 0.08) 100%);
+    flex-shrink: 0;
+}
+
+.ap-welcome__benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ap-welcome__benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #374545;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(79, 191, 159, 0.1);
+    transition: color 0.25s ease;
+}
+
+.ap-welcome__benefit-item:last-child {
+    border-bottom: none;
+}
+
+.ap-welcome__benefit-item:hover {
+    color: var(--deep-teal);
+}
+
+.ap-welcome__benefit-icon {
+    color: var(--teal-green);
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ============================================================
+   4. GALLERY
+   ============================================================ */
+.ap-gallery {
+    background: var(--bg-light);
+}
+
+.ap-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ap-gallery__item {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 6px;
+    background: #dde8ec;
+    box-shadow: 0 2px 12px rgba(95, 167, 195, 0.1);
+}
+
+.ap-gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ap-gallery__item:hover .ap-gallery__img {
+    transform: scale(1.07);
+}
+
+.ap-gallery__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(58, 160, 135, 0.88) 0%,
+            rgba(79, 191, 159, 0.2) 50%,
+            transparent 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 22px;
+}
+
+.ap-gallery__item:hover .ap-gallery__overlay {
+    opacity: 1;
+}
+
+.ap-gallery__overlay-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.04em;
+}
+
+.ap-gallery__note {
+    font-family: "Lato", sans-serif;
+    color: var(--text-gray);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-align: center;
+    margin-top: 22px;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   5. WHY CHOOSE US — BENEFIT CARDS
+   ============================================================ */
+.ap-benefits {
+    background: var(--white);
+}
+
+.ap-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ap-benefit-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid transparent;
+    border-radius: 8px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.ap-benefit-card:hover {
+    border-color: var(--border-medium);
+    border-left-color: var(--teal-green);
+    box-shadow: 0 8px 32px rgba(79, 191, 159, 0.12);
+    transform: translateY(-4px);
+}
+
+.ap-benefit-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(95, 167, 195, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 17px;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+}
+
+.ap-benefit-card:hover .ap-benefit-card__icon {
+    background: rgba(79, 191, 159, 0.18);
+    color: var(--deep-teal);
+}
+
+.ap-benefit-card__text {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* ============================================================
+   6. DENTAL SOLUTIONS TABS
+   ============================================================ */
+.ap-tabs {
+    background: var(--bg-light);
+}
+
+.ap-tabs__bar {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 48px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.ap-tabs__bar::-webkit-scrollbar {
+    display: none;
+}
+
+.ap-tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-gray);
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 28px;
+    cursor: pointer;
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+    white-space: nowrap;
+    margin-bottom: -1px;
+}
+
+.ap-tab-btn:hover {
+    color: var(--primary-blue);
+}
+
+.ap-tab-btn.active {
+    color: var(--deep-teal);
+    border-bottom-color: var(--deep-teal);
+}
+
+.ap-tab-pane {
+    background: var(--white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 52px 48px;
+    box-shadow: 0 2px 16px rgba(95, 167, 195, 0.07);
+}
+
+.ap-tab-pane__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #1a2e2d;
+    margin: 0 0 22px;
+    line-height: 1.2;
+}
+
+.ap-tab-pane__highlight {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 21px;
+    color: var(--primary-blue);
+    margin: 0 0 20px;
+    line-height: 1.55;
+}
+
+.ap-tab-pane__body {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-gray);
+    margin: 0 0 20px;
+}
+
+/* Facts Grid */
+.ap-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.ap-fact-card {
+    background: rgba(95, 167, 195, 0.05);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ap-fact-card__num {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: rgba(95, 167, 195, 0.35);
+    line-height: 1;
+}
+
+.ap-fact-card__text {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.72;
+    color: #374545;
+    margin: 0;
+}
+
+/* Treatments List */
+.ap-treatments {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 28px;
+}
+
+.ap-treatment-item {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(95, 167, 195, 0.1);
+}
+
+.ap-treatment-item:last-child {
+    border-bottom: none;
+}
+
+.ap-treatment-item--highlight {
+    background: rgba(79, 191, 159, 0.07);
+    border-radius: 6px;
+    padding: 22px 18px;
+    border-left: 3px solid var(--teal-green);
+    border-bottom: none;
+    margin-top: 6px;
+}
+
+.ap-treatment-item__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.ap-treatment-item__badge {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(95, 167, 195, 0.4);
+    min-width: 36px;
+    line-height: 1;
+}
+
+.ap-treatment-item__name {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2e2d;
+    margin: 0;
+    letter-spacing: 0.03em;
+}
+
+.ap-treatment-item--highlight .ap-treatment-item__name {
+    color: var(--deep-teal);
+}
+
+.ap-treatment-item__desc {
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 1.72;
+    color: var(--text-gray);
+    margin: 0 0 0 52px;
+}
+
+/* Advantages List */
+.ap-advantages {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ap-advantages__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #374545;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(95, 167, 195, 0.1);
+    transition: color 0.2s ease;
+}
+
+.ap-advantages__item:last-child {
+    border-bottom: none;
+}
+
+.ap-advantages__item:hover {
+    color: var(--deep-teal);
+}
+
+.ap-advantages__check {
+    color: var(--teal-green);
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ============================================================
+   7. KEY INFORMATION ACCORDION
+   ============================================================ */
+.ap-accordion {
+    background: var(--white);
+}
+
+.ap-acc-item {
+    border-bottom: 1px solid rgba(95, 167, 195, 0.12);
+}
+
+.ap-acc-item:first-of-type {
+    border-top: 1px solid rgba(95, 167, 195, 0.12);
+}
+
+.ap-acc-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #1a2e2d;
+    text-align: left;
+    transition: color 0.25s ease;
+}
+
+.ap-acc-trigger:hover {
+    color: var(--primary-blue);
+}
+
+.ap-acc-trigger h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 300;
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.ap-acc-icon {
+    color: var(--teal-green);
+    font-size: 14px;
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    margin-left: 24px;
+}
+
+.ap-acc-icon.open {
+    transform: rotate(180deg);
+}
+
+.ap-acc-body {
+    padding-bottom: 40px;
+}
+
+.ap-acc-body__text {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.88;
+    color: var(--text-gray);
+    margin: 0 0 22px;
+}
+
+.ap-acc-body__subtitle {
+    font-family: "Lato", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    font-weight: 600;
+    margin: 22px 0 10px;
+}
+
+.ap-acc-body__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ap-acc-body__list li {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-gray);
+    padding-left: 22px;
+    position: relative;
+}
+
+.ap-acc-body__list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: rgba(95, 167, 195, 0.5);
+}
+
+/* Comparison Table */
+.ap-comparison {
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.ap-comparison__row {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1.6fr;
+    border-bottom: 1px solid rgba(95, 167, 195, 0.08);
+}
+
+.ap-comparison__row:last-child {
+    border-bottom: none;
+}
+
+.ap-comparison__row--header {
+    background: rgba(95, 167, 195, 0.08);
+}
+
+.ap-comparison__row--highlight {
+    background: rgba(79, 191, 159, 0.08);
+}
+
+.ap-comparison__cell {
+    padding: 14px 18px;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-gray);
+    border-right: 1px solid rgba(95, 167, 195, 0.06);
+}
+
+.ap-comparison__cell:last-child {
+    border-right: none;
+}
+
+.ap-comparison__row--header .ap-comparison__cell {
+    color: var(--primary-blue);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.ap-comparison__row--highlight .ap-comparison__cell {
+    color: #2a4a48;
+}
+
+.ap-comparison__row--highlight .ap-comparison__cell strong {
+    color: var(--deep-teal);
+    font-weight: 600;
+}
+
+/* Satisfaction Cards */
+.ap-satisfaction {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ap-satisfaction__card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.ap-satisfaction__card:hover {
+    border-color: var(--border-medium);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(79, 191, 159, 0.12);
+}
+
+.ap-satisfaction__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(95, 167, 195, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.ap-satisfaction__card:hover .ap-satisfaction__icon {
+    background: rgba(79, 191, 159, 0.18);
+    color: var(--deep-teal);
+}
+
+.ap-satisfaction__card p {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* ============================================================
+   8. CLOSING CTA
+   ============================================================ */
+.ap-cta {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-teal) 100%);
+    text-align: center;
+    padding: 120px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ap-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse at center,
+            rgba(127, 214, 194, 0.3) 0%,
+            transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ap-cta__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ap-cta__h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.15;
+    margin: 18px 0 26px;
+    text-shadow: 0 2px 16px rgba(58, 160, 135, 0.25);
+}
+
+.ap-cta__h2 em {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ap-cta__text {
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1.88;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 auto 44px;
+    max-width: 580px;
+}
+
+.ap-cta__btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--deep-teal);
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 54px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.ap-cta__btn:hover {
+    background: var(--light-aqua);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(58, 160, 135, 0.35);
+}
+
+.ap-cta__btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ============================================================
+   9. LIGHTBOX
+   ============================================================ */
+.ap-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 46, 45, 0.88);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.ap-lightbox__content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.ap-lightbox__img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 24px 80px rgba(58, 160, 135, 0.2);
+}
+
+.ap-lightbox__close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.ap-lightbox__close:hover {
+    background: rgba(232, 84, 30, 0.75);
+    border-color: rgba(232, 84, 30, 0.5);
+}
+
+.ap-lightbox__title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.82);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.07em;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+    .ap-container {
+        padding: 0 28px;
+    }
+
+    .ap-section {
+        padding: 80px 0;
+    }
+
+    .ap-welcome__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .ap-welcome__right {
+        padding-top: 0;
+    }
+
+    .ap-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ap-benefits__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ap-stat {
+        padding: 12px 32px;
+    }
+
+    .ap-facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-satisfaction {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ap-tab-pane {
+        padding: 36px 32px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    .ap-container {
+        padding: 0 20px;
+    }
+
+    .ap-section {
+        padding: 64px 0;
+    }
+
+    .ap-hero {
+        padding-top: 80px;
+    }
+
+    .ap-hero__title {
+        font-size: clamp(44px, 12vw, 68px);
+    }
+
+    .ap-hero__eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        margin-bottom: 20px;
+    }
+
+    .ap-hero__subtitle {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+    }
+
+    .ap-stats {
+        padding: 20px 16px;
+    }
+
+    .ap-stat {
+        padding: 12px 24px;
+    }
+
+    .ap-stats__sep {
+        height: 40px;
+    }
+
+    .ap-welcome__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ap-welcome__right {
+        padding-top: 0;
+    }
+
+    .ap-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .ap-benefits__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .ap-tab-btn {
+        padding: 14px 18px;
+        font-size: 11px;
+        letter-spacing: 0.07em;
+    }
+
+    .ap-tab-pane {
+        padding: 28px 20px;
+    }
+
+    .ap-tab-pane__title {
+        font-size: 26px;
+    }
+
+    .ap-comparison__row {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-comparison__cell {
+        border-right: none;
+        border-bottom: 1px solid rgba(95, 167, 195, 0.06);
+        padding: 10px 16px;
+    }
+
+    .ap-comparison__cell:last-child {
+        border-bottom: none;
+    }
+
+    .ap-satisfaction {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ap-acc-trigger {
+        padding: 22px 0;
+    }
+
+    .ap-acc-trigger h3 {
+        font-size: 20px;
+    }
+
+    .ap-cta {
+        padding: 80px 24px;
+    }
+
+    .ap-cta__glow {
+        width: 100%;
+        height: 280px;
+    }
+
+    .ap-cta__h2 {
+        font-size: clamp(34px, 8vw, 50px);
+    }
+
+    .ap-cta__btn {
+        padding: 16px 40px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    .ap-stats {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 16px;
+    }
+
+    .ap-stats__sep {
+        width: 52px;
+        height: 1px;
+        margin: 2px auto;
+    }
+
+    .ap-stat {
+        padding: 14px 16px;
+    }
+
+    .ap-gallery__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-tab-btn {
+        padding: 12px 14px;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+    }
+
+    .ap-tab-pane {
+        padding: 22px 16px;
+    }
+
+    .ap-facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-welcome__right {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ap-welcome__divider {
+        width: 52px;
+        min-height: 2px;
+        height: 2px;
+        background: linear-gradient(to right,
+                var(--teal-green) 0%,
+                rgba(79, 191, 159, 0.08) 100%);
+    }
+
+    .ap-cta {
+        padding: 64px 16px;
+    }
+
+    .ap-cta__btn {
+        padding: 15px 32px;
+        font-size: 12px;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .ap-benefits__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ap-benefit-card {
+        padding: 24px 20px;
+    }
+
+    .ap-treatment-item__desc {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .ap-acc-trigger h3 {
+        font-size: 18px;
+    }
+
+    .ap-lightbox__close {
+        top: -12px;
+        right: -8px;
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}

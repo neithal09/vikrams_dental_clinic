@@ -1,0 +1,375 @@
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@300,400,500,600,700&f[]=instrument-serif@400&display=swap");
+
+/* ─────────────────────────────────────────
+   SECTION
+───────────────────────────────────────── */
+.testimonials {
+    background: #f6f9f9;
+    padding: 100px 0 90px;
+    overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   HEADER
+───────────────────────────────────────── */
+.testimonials__header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 24px;
+}
+
+.testimonials__eyebrow {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #0b6e6b;
+    margin-bottom: 14px;
+}
+
+.testimonials__heading {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    color: #0f2e2d;
+    line-height: 1.1;
+}
+
+/* ─────────────────────────────────────────
+   CAROUSEL WRAPPER
+───────────────────────────────────────── */
+.testimonials__carousel {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 72px;
+    position: relative;
+}
+
+/* ─────────────────────────────────────────
+   CARD  (tc = testimonial card)
+───────────────────────────────────────── */
+.tc {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 440px;
+    cursor: pointer;
+    /* subtle lift on hover */
+    transition:
+        transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
+        box-shadow 0.4s ease;
+}
+
+.tc:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 56px rgba(11, 70, 67, 0.22);
+}
+
+/* ── Photo layer ── */
+.tc-photo {
+    position: absolute;
+    inset: 0;
+}
+
+.tc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.55s ease;
+    display: block;
+}
+
+.tc:hover .tc-photo img {
+    transform: scale(1.06);
+}
+
+/* ── Permanent bottom gradient + name ── */
+.tc-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 80px 22px 22px;
+    background: linear-gradient(
+        to top,
+        rgba(7, 30, 28, 0.95) 0%,
+        rgba(7, 30, 28, 0.6) 55%,
+        transparent 100%
+    );
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.tc:hover .tc-base {
+    opacity: 0;
+}
+
+/* Stars */
+.tc-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 8px;
+}
+
+.tc-star {
+    width: 13px;
+    height: 13px;
+    color: #7dd9d5;
+    flex-shrink: 0;
+}
+
+.tc-name {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+
+.tc-treatment {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+}
+
+/* ── Slide-up review overlay ── */
+.tc-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* tall enough to cover the card */
+    height: 100%;
+    background: linear-gradient(145deg, #0b6e6b 0%, #094f4d 60%, #072e2c 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px 24px;
+    transform: translateY(100%);
+    transition: transform 0.48s cubic-bezier(0.34, 1.1, 0.64, 1);
+    z-index: 2;
+}
+
+.tc:hover .tc-overlay {
+    transform: translateY(0);
+}
+
+/* Big opening quote */
+.tc-quote {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 72px;
+    line-height: 0.7;
+    color: rgba(125, 217, 213, 0.35);
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+/* Review text */
+.tc-review {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.tc-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 18px 0;
+    flex-shrink: 0;
+}
+
+/* Author row at the bottom of the overlay */
+.tc-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.tc-author-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid rgba(125, 217, 213, 0.5);
+    flex-shrink: 0;
+}
+
+.tc-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tc-author-name {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.tc-author-treat {
+    font-family: "Cabinet Grotesk", sans-serif;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(125, 217, 213, 0.7);
+}
+
+/* ─────────────────────────────────────────
+   NAVIGATION ARROWS
+───────────────────────────────────────── */
+.testimonials__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid #d0e5e4;
+    background: #ffffff;
+    color: #4a8886;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition:
+        background 0.22s ease,
+        color 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+    box-shadow: 0 2px 14px rgba(11, 70, 67, 0.1);
+}
+
+.testimonials__nav:hover {
+    background: #0b6e6b;
+    color: #ffffff;
+    border-color: #0b6e6b;
+    box-shadow: 0 6px 24px rgba(11, 70, 67, 0.28);
+}
+
+.testimonials__nav--prev {
+    left: 10px;
+}
+
+.testimonials__nav--next {
+    right: 10px;
+}
+
+.testimonials__nav.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────
+   PAGINATION DOTS
+───────────────────────────────────────── */
+.testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 44px;
+}
+
+.testimonials__dots .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #b5d4d3;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.testimonials__dots .swiper-pagination-bullet-active {
+    background: #0b6e6b;
+    width: 26px;
+    border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────
+   SWIPER OVERRIDES
+───────────────────────────────────────── */
+.testimonials .swiper {
+    overflow: visible;
+    padding: 8px 4px 4px;
+}
+
+.testimonials .swiper-slide {
+    height: auto;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .testimonials {
+        padding: 80px 0 70px;
+    }
+
+    .testimonials__carousel {
+        padding: 0 56px;
+    }
+
+    .tc {
+        height: 420px;
+    }
+}
+
+@media (max-width: 640px) {
+    .testimonials {
+        padding: 64px 0 56px;
+    }
+
+    .testimonials__carousel {
+        padding: 0 44px;
+    }
+
+    .testimonials__nav {
+        width: 38px;
+        height: 38px;
+    }
+
+    .testimonials__nav--prev {
+        left: 4px;
+    }
+
+    .testimonials__nav--next {
+        right: 4px;
+    }
+
+    .tc {
+        height: 400px;
+    }
+
+    .tc-review {
+        -webkit-line-clamp: 5;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials__carousel {
+        padding: 0 36px;
+    }
+
+    .tc {
+        height: 380px;
+    }
+}

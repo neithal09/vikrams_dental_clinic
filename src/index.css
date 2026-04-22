@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root {
+  --logo-white: #ffffff;
+  --logo-blue: #58add5;
+  --logo-blue-strong: #3f95be;
+  --logo-blue-deep: #246f93;
+  --logo-mint: #5dd8c4;
+  --logo-mint-strong: #38bea8;
+  --logo-mint-soft: #dff7f2;
+  --logo-surface: #f4fbfa;
+  --logo-surface-alt: #e9f7f5;
+  --logo-ink: #1f5f7e;
+  --logo-ink-soft: #6f9ab2;
+  --logo-border: rgba(88, 173, 213, 0.22);
+  --logo-shadow: rgba(36, 111, 147, 0.16);
+  --logo-overlay: rgba(31, 95, 126, 0.88);
+  --logo-overlay-soft: rgba(93, 216, 196, 0.16);
+  --logo-gradient: linear-gradient(135deg, var(--logo-mint) 0%, var(--logo-blue) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: var(--logo-surface);
+  color: var(--logo-ink);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-weight: 400;
+}
