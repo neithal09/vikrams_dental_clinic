@@ -1,11 +1,10 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
-  touch-action: pan-y;
-  pointer-events: none;
+  z-index: 1;
 }
 
 .hero__video-wrapper {
@@ -14,13 +13,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .hero__content {
@@ -30,7 +31,7 @@
   transform: translateX(-50%);
   z-index: 3;
   text-align: center;
-  pointer-events: none;
+  width: 100%;
 }
 
 .hero__logo {
@@ -55,7 +56,6 @@
   transition: all 0.3s ease;
   cursor: pointer;
   white-space: nowrap;
-  pointer-events: auto;
 }
 
 .hero__cta:hover {
