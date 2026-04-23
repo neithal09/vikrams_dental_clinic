@@ -271,7 +271,7 @@ export default function BookAppointmentPage() {
                 <p>
                   Monday – Saturday
                   <br />
-                  10:00 AM – 8:00 PM
+                  10:00 AM – 8:30 PM
                 </p>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function BookAppointmentPage() {
               <div>
                 <strong>Call or WhatsApp</strong>
                 <p>
-                  <a href="tel:+919820020221">+91 98200 20221</a>
+                  <a href="tel:+918800971008">+91 8800971008</a>
                 </p>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function BookAppointmentPage() {
                 <strong>Email</strong>
                 <p>
                   <a href="mailto:info@vikramsdental.com">
-                    info@vikramsdental.com
+                    vikramsdentalclinic@gmail.com
                   </a>
                 </p>
               </div>

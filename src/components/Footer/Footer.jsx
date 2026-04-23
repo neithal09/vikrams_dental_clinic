@@ -72,7 +72,7 @@ const Footer = () => {
         {/* Right Column */}
         <div className="footer__col footer__col--right">
           <div className="footer__hours">
-            <span className="footer__hours-time">10am – 8pm</span>
+            <span className="footer__hours-time">10am – 8:30pm</span>
             <span className="footer__hours-days">Monday – Saturday</span>
           </div>
 
@@ -81,21 +81,21 @@ const Footer = () => {
               Dr. Vikram’s Dental Clinic
             </p>
             <p className="footer__address">
-              South Extension Part 2,
+              D-42  South Extension Part 2,
               <br />
               New Delhi – 110049
             </p>
 
             <div className="footer__contact-lines">
               <a href="tel:+919820020221" className="footer__phone">
-                +91 98200 20221
+                +91 8800971008
               </a>
 
               <a
                 href="mailto:info@drvikramsdental.com"
                 className="footer__email"
               >
-                info@drvikramsdental.com
+                vikramsdentalclinic@gmail.com
               </a>
             </div>
           </address>

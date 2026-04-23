@@ -55,7 +55,30 @@ img {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
   font-weight: 400;
+}
+
+.video_desktop {
+  display: block;
+}
+
+.video_mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .video_desktop {
+    display: none;
+  }
+
+  .video_mobile {
+    display: block;
+  }
 }

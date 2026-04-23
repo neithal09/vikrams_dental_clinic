@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="hero__video-wrapper">
         <video
           width="400"
-          className="hero__video"
+          className="video_desktop hero__video"
           autoPlay
           muted
           loop
@@ -41,6 +41,17 @@ const Hero = () => {
           preload="auto"
         >
           <source src="/video.webm" type="video/webm" />
+        </video>
+        <video
+          width="400"
+          className="video_mobile hero__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/responsiveMobile.webm" type="video/webm" />
         </video>
       </div>
 

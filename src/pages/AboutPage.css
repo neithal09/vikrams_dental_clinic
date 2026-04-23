@@ -96,7 +96,7 @@
     position: absolute;
     inset: 0;
     background: url("/kidsmile.jpg") center / cover no-repeat;
-    opacity: 0.62;
+
     z-index: 0;
 }
 
