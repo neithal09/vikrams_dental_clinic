@@ -31,6 +31,15 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero__video-wrapper">
+        {/* <video
+          width="400"
+          className="hero__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        > */}
         <video
           width="400"
           className="hero__video"
@@ -39,6 +48,7 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
+          webkit-playsinline="true"
         >
           <source src="/video.webm" type="video/webm" />
         </video>
