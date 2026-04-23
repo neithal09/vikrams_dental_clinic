@@ -1,11 +1,3 @@
-/* .hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  overflow: hidden;
-  z-index: 1;
-} */
 .hero {
   position: relative;
   width: 100%;
@@ -13,19 +5,8 @@
   min-height: 100dvh;
   overflow: hidden;
   z-index: 1;
-  touch-action: pan-y;
-  /* ADD THIS — allows vertical scroll */
 }
 
-/* .hero__video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-} */
 .hero__video-wrapper {
   position: absolute;
   top: 0;
@@ -34,8 +15,6 @@
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  touch-action: none;
-  /* ADD THIS */
 }
 
 .hero__video {
@@ -43,18 +22,7 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  touch-action: none;
-  /* ADD THIS */
-  -webkit-tap-highlight-color: transparent;
-  /* ADD THIS */
 }
-
-/* .hero__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-} */
 
 .hero__content {
   position: absolute;
