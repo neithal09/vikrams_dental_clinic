@@ -19,9 +19,9 @@ const testimonialImages = [
   testimonialImg2,
   testimonialImg3,
   testimonialImg4,
-  testimonialImg1,
-  testimonialImg2,
-  testimonialImg3,
+  // testimonialImg1,
+  // testimonialImg2,
+  // testimonialImg3,
 ];
 const testimonials = [
   {
@@ -54,32 +54,32 @@ const testimonials = [
     review:
       "I come every six months for my cleaning because it genuinely keeps my teeth stain-free and fresh. The appointments are gentle, thorough, and never rushed.",
     stars: 5,
-    img: testimonialImages[0],
-  },
-  {
-    name: "Sobia",
-    treatment: "Teeth Whitening",
-    review:
-      "Got my teeth whitening done after putting it off for months, and I'm so glad I finally did. The shade difference was instant and the whole session was super comfortable.",
-    stars: 5,
-    img: testimonialImages[1],
-  },
-  {
-    name: "Ruhanika",
-    treatment: "Aligners",
-    review:
-      "I've been on aligners for a few months and can already see a clear difference. They're comfortable, invisible, and easy to manage. The team guides me at every step.",
-    stars: 5,
-    img: testimonialImages[2],
-  },
-  {
-    name: "Nitibha Kaul",
-    treatment: "Whitening & Cleaning",
-    review:
-      "I regularly visit for whitening and cleaning because the results are always consistent. With my hectic schedule, this keeps my smile bright without any hassle.",
-    stars: 5,
     img: testimonialImages[3],
   },
+  // {
+  //   name: "Sobia",
+  //   treatment: "Teeth Whitening",
+  //   review:
+  //     "Got my teeth whitening done after putting it off for months, and I'm so glad I finally did. The shade difference was instant and the whole session was super comfortable.",
+  //   stars: 5,
+  //   img: testimonialImages[1],
+  // },
+  // {
+  //   name: "Ruhanika",
+  //   treatment: "Aligners",
+  //   review:
+  //     "I've been on aligners for a few months and can already see a clear difference. They're comfortable, invisible, and easy to manage. The team guides me at every step.",
+  //   stars: 5,
+  //   img: testimonialImages[2],
+  // },
+  // {
+  //   name: "Nitibha Kaul",
+  //   treatment: "Whitening & Cleaning",
+  //   review:
+  //     "I regularly visit for whitening and cleaning because the results are always consistent. With my hectic schedule, this keeps my smile bright without any hassle.",
+  //   stars: 5,
+  //   img: testimonialImages[3],
+  // },
 ];
 
 const Stars = ({ count }) => (

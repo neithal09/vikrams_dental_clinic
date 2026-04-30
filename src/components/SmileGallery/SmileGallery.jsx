@@ -24,16 +24,19 @@ const cases = [
     category: "smile",
     description:
       "When braces couldn't prevent recurring gaps, porcelain veneers delivered the solution. Front 6 teeth restored in just 7 days.",
-    before: "https://experteethcare.com/wp-content/uploads/2025/12/zayn-1.webp",
-    after: "https://experteethcare.com/wp-content/uploads/2025/12/zayn-2.webp",
+    before:
+      "https://experteethcare.com/wp-content/uploads/2025/12/SAKSHI-1.webp",
+    after:
+      "https://experteethcare.com/wp-content/uploads/2025/12/SAKSHI-2.webp",
   },
   {
     name: "Ritu Joshi",
     category: "smile",
     description:
       "Teeth discoloration caused by fluorosis corrected with front 6 porcelain veneers. Patient travelled from Bangalore for a 5-day smile transformation.",
-    before: "https://experteethcare.com/wp-content/uploads/2025/12/zayn-1.webp",
-    after: "https://experteethcare.com/wp-content/uploads/2025/12/zayn-2.webp",
+    before:
+      "https://experteethcare.com/wp-content/uploads/2025/12/image-29.png",
+    after: "https://experteethcare.com/wp-content/uploads/2025/12/image-31.png",
   },
 ];
 
